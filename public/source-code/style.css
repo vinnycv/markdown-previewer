@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: linear-gradient(45deg, red, black), black;
+}
+
+#root {
+  background: linear-gradient(45deg, red, black);
+  --accent: aqua;
+  --bgcolor-main: ;
+  --bgcolor-box: darkgrey;
+  --toolbar-color: black;
+  padding: 20px 0;
+}
+
+.editorWrap {
+  border: 2px solid black;
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 8px 8px 8px black;
+}
+
+.toolbar {
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 3px 5px;
+  font-family: arial black;
+  color: var(--accent);
+  background-color: var(--toolbar-color);
+}
+
+.maximize {
+  margin-left: auto;
+}
+
+.fa-ghost {
+  margin-right: 6px;
+}
+
+#editor {
+  width: 99%;
+  min-height: 200px;
+  margin-bottom: -4px;
+  resize: vertical;
+  outline: none;
+  background-color: var(--bgcolor-box);
+  border-bottom-left-radius: 6px;
+  padding-left: 2px;
+}
+
+.previewWrap {
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 0 auto;
+  width: 60%;
+  min-height: 400px;
+  box-shadow: 0 0 8px black;
+}
+
+#preview {
+  background-color: var(--bgcolor-box);
+  padding: 8px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+a:visited {
+  color: blue;
+}
+
+code {
+  background-color: lightgrey;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+p:first-of-type {
+  margin-top: 0;
+}
+
+span:hover {
+  color: lightgrey;
+}
+
+span:active {
+  color: white;
+}
+
+img {
+  max-height: 50px;
+  max-width: 50px;
+  margin-left: 450px;
+}
