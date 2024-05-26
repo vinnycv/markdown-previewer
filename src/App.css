@@ -3,15 +3,15 @@
   --accent: aqua;
   --bgcolor-main: ;
   --bgcolor-box: darkgrey;
-  --toolbar-color: black;
-  padding: 20px 0;
+  --toolbar-color: rgb(36, 36, 36);
+  padding: 2em 0;
+  min-height: 100vh;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: linear-gradient(45deg, red, black), black;
 }
 
 .editorWrap {
@@ -67,6 +67,7 @@ body {
   padding: 8px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
+  overflow: none;
 }
 
 a:visited {
@@ -96,7 +97,8 @@ span:active {
 img {
   max-height: 50px;
   max-width: 50px;
-  margin-left: 450px;
+  display: block;
+  margin: auto;
 }
 
 
