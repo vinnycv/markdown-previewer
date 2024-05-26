@@ -84,7 +84,7 @@ function Toolbar({ title, onClick, icon }) {
   return (
     <div className="toolbar">
       <i className={"fa fa-" + pic}></i>
-      {title}
+      <span id="toolbar-text">{title}</span>
       <span
         className="maximize"
         style={{ cursor: "pointer" }}

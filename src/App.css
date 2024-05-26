@@ -1,9 +1,10 @@
 #root {
-  background: linear-gradient(45deg, green, black);
-  --accent: aqua;
-  --bgcolor-main: ;
+  background: linear-gradient(45deg, #5f8671, #292627);
+  --icon: #c4952a;
+  --toolbar-color: #98a173;
+  --bgcolor-main: #818962;
   --bgcolor-box: darkgrey;
-  --toolbar-color: rgb(36, 36, 36);
+  --toolbar-bg: #292627;
   padding: 2em 0;
   min-height: 100vh;
 }
@@ -15,31 +16,40 @@ body {
 }
 
 .editorWrap {
-  border: 2px solid black;
+  border: 2px solid var(--toolbar-bg);
   max-width: 600px;
   margin: 0 auto 1.5rem auto;
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  box-shadow: 8px 8px 8px black;
+  box-shadow: 8px 8px 8px var(--toolbar-bg);
 }
 
 .toolbar {
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid var(--toolbar-bg); */
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 3px 5px;
   font-family: arial black;
-  color: var(--accent);
-  background-color: var(--toolbar-color);
+  color: var(--icon);
+  background-color: var(--toolbar-bg);
+  overflow: hidden;
+  height: 2em;
+}
+
+#toolbar-text {
+  color: var(--toolbar-color);
 }
 
 .maximize {
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 
 .fa-ghost {
-  margin-right: 6px;
+  /* margin-right: 1rem; */
+  transform: translateX(5em) scale(6) rotate(45deg);
+  /* transform: scale(5); */
 }
 
 #editor {
@@ -54,12 +64,12 @@ body {
 }
 
 .previewWrap {
-  border: 2px solid black;
+  border: 2px solid var(--toolbar-bg);
   border-radius: 8px;
   margin: 0 auto;
   width: 60%;
   min-height: 400px;
-  box-shadow: 0 0 8px black;
+  box-shadow: 0 0 8px var(--toolbar-bg);
 }
 
 #preview {
