@@ -2,7 +2,7 @@
   background: linear-gradient(45deg, #5f8671, #292627);
   --icon: #c4952a;
   --toolbar-color: #98a173;
-  --bgcolor-main: #818962;
+    /* --bgcolor-main: #818962; */
   --bgcolor-box: darkgrey;
   --toolbar-bg: #292627;
   padding: 2em 0;
@@ -17,7 +17,8 @@ body {
 
 .editorWrap {
   border: 2px solid var(--toolbar-bg);
-  max-width: 600px;
+  width: 40vw;
+  min-width: 450px;
   margin: 0 auto 1.5rem auto;
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
@@ -26,11 +27,10 @@ body {
 }
 
 .toolbar {
-  /* border-bottom: 1px solid var(--toolbar-bg); */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3px 5px;
+  padding: .2em .4em;
   font-family: arial black;
   color: var(--icon);
   background-color: var(--toolbar-bg);
@@ -43,21 +43,22 @@ body {
 }
 
 .maximize {
-  /* margin-left: auto; */
+  font-size: 1.3rem;
 }
 
 .fa-ghost {
-  /* margin-right: 1rem; */
   transform: translateX(5em) scale(6) rotate(45deg);
-  /* transform: scale(5); */
+  opacity: 60%;
 }
 
 #editor {
   width: 99%;
-  min-height: 200px;
+  min-height: 15em;
   margin-bottom: -4px;
   resize: vertical;
-  outline: none;
+  border-style: none; 
+  /* border-color: Transparent;  */
+  overflow: auto;
   background-color: var(--bgcolor-box);
   border-bottom-left-radius: 6px;
   padding-left: 2px;
@@ -67,8 +68,9 @@ body {
   border: 2px solid var(--toolbar-bg);
   border-radius: 8px;
   margin: 0 auto;
-  width: 60%;
-  min-height: 400px;
+  width: 60vw;
+  min-width: 550px;
+  min-height: 25em;
   box-shadow: 0 0 8px var(--toolbar-bg);
 }
 
@@ -105,52 +107,14 @@ span:active {
 }
 
 img {
-  max-height: 50px;
-  max-width: 50px;
+  max-height: 3em;
+  max-width: 3em;
   display: block;
   margin: auto;
 }
 
-
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 550px) {
+  .previewWrap, .editorWrap {
+    width: 100vw;
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
