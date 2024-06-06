@@ -1,22 +1,23 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
+import { marked } from 'marked'
 import './App.css'
-// import { marked } from "https://esm.sh/marked";
-// import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+// import { marked } from "https://esm.sh/marked"; // CodePen
 
 // app start up text at the bottom since it's big
 
 let pic = "ghost"; // for fun
 
-// create new renderer to edit its link property to allow clikcing a rendered link to work
+// create new renderer to edit its link property to allow clicking a rendered link to work
 const linkRenderer = new marked.Renderer();
 //editing the link property
 linkRenderer.link = function (href, title, text) {
   return `<a target="_blank" href="${href}">${text}` + "</a>";
 };
+
 // render carriage returns as line breaks
-marked.setOptions({
-  breaks: true
-});
+//<br> renders a new line
+// 4 spaces starts a single line of code
+// marked(markdown, { breaks: true });
 
 function App() {
   const [maximized, setMaximized] = useState({
@@ -26,6 +27,10 @@ function App() {
   });
 
   const [markdown, setMarkdown] = useState(initialMarkdown);
+
+  marked.setOptions({
+    breaks: true
+  });
 
   function handleEditorMaximize() {
     maximized.editor === false
@@ -61,7 +66,11 @@ function App() {
         />
         <Editor
           text={markdown}
-          onChange={(e) => setMarkdown(e.target.value)}
+          onChange={(e) => {
+            setMarkdown(e.target.value) 
+            // console.log(e.target.value)
+          }
+        }
           maximized={maximized}
         />
       </div>
@@ -110,6 +119,7 @@ function Editor({ text, onChange, maximized }) {
 }
 
 function Previewer({ text }) {
+  console.log(marked(text));
   return (
     // without the new link renderer, would just need: {{__html: marked(text)}}
     // marked() and marked.parse() work fine
@@ -129,6 +139,7 @@ const initialMarkdown =
   "### And here's some other cool stuff:\n\n" +
   "Heres some inline code, `<div></div>`, between 2 backticks. \n\n" +
   "```\n// this is multi-line code:\nfunction anotherExample(firstLine, lastLine) {\n  if (firstLine == '```' && lastLine == '```') {\n    return multiLineCode;\n  }\n}\n```\n\n" +
+  "Separate your text with using the html line break element. Here's a few empty lines for ya <br><br><br> and we're back.\n\n"+
   "You can also make text **bold**... whoa!\n\n" +
   "Or _italic_.\n\n" +
   "Or... wait for it... **_both!_**\n\n" +
