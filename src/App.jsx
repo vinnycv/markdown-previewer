@@ -14,11 +14,6 @@ linkRenderer.link = function (href, title, text) {
   return `<a target="_blank" href="${href}">${text}` + "</a>";
 };
 
-// render carriage returns as line breaks
-//<br> renders a new line
-// 4 spaces starts a single line of code
-// marked(markdown, { breaks: true });
-
 function App() {
   const [maximized, setMaximized] = useState({
     editor: false,
@@ -31,6 +26,9 @@ function App() {
   marked.setOptions({
     breaks: true
   });
+  // render carriage returns as line breaks
+  //<br> renders a new line
+  // 4 spaces starts a single line of code
 
   function handleEditorMaximize() {
     maximized.editor === false
@@ -137,7 +135,7 @@ const initialMarkdown =
   "# Welcome to my React Markdown App\n" +
   "## This is a sub-heading...\n" +
   "### And here's some other cool stuff:\n\n" +
-  "Heres some inline code, `<div></div>`, between 2 backticks. \n\n" +
+  "Here's some inline code, `<div></div>`, between 2 backticks. \n\n" +
   "```\n// this is multi-line code:\nfunction anotherExample(firstLine, lastLine) {\n  if (firstLine == '```' && lastLine == '```') {\n    return multiLineCode;\n  }\n}\n```\n\n" +
   "Separate your text with using the html line break element. Here's a few empty lines for ya <br><br><br> and we're back.\n\n"+
   "You can also make text **bold**... whoa!\n\n" +
